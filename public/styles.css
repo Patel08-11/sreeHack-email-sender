@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1.5rem;
+}
+
+.header h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.header p {
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+
+.form-section {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+.description {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: -0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.upload-area {
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.upload-area:hover {
+    background-color: #f9fafb;
+    border-color: #4f46e5;
+}
+
+.upload-content i {
+    font-size: 2rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.upload-content p {
+    margin: 0;
+    color: #6b7280;
+}
+
+.font-semibold {
+    font-weight: 600;
+    color: #4f46e5;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.status-text {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+.email-list {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.email-tag {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #4338ca;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    margin: 0.25rem;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+.attachments-list, .results-list {
+    margin-top: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.attachment-item, .result-item {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+.attachment-item:last-child, .result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item.success { background-color: #dcfce7; color: #166534; }
+.result-item.failure { background-color: #fee2e2; color: #991b1b; }
+
+.send-button, .reset-button {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.send-button { background-color: #4f46e5; color: white; }
+.send-button:hover:not(:disabled) { background-color: #4338ca; }
+.send-button:disabled { background-color: #a5b4fc; cursor: not-allowed; }
+
+.reset-button { background-color: #e5e7eb; color: #374151; margin-top: 1rem; }
+.reset-button:hover { background-color: #d1d5db; }
+
+.results-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }
+.results-summary { font-size: 0.875rem; }
+.success-text { color: #16a34a; margin-right: 1rem; }
+.failure-text { color: #dc2626; }
+
+.instructions { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 0.875rem; color: #6b7280; }
+.instructions h4 { font-weight: 600; color: #374151; }
+.instructions ul { padding-left: 1.25rem; }
+.json-examples { margin-top: 1rem; }
+.json-examples code { display: block; background-color: #f9fafb; padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem; }

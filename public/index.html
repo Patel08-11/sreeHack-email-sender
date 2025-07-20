@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SreeHack2k25 - Email Sender</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>
+                <i class="fas fa-envelope"></i>
+                 Email Sender
+            </h2>
+            <p>Send emails with file attachments to multiple recipients</p>
+        </div>
+
+        <!-- JSON File Upload Section -->
+        <div class="form-section">
+            <label class="form-label">
+                <i class="fas fa-users"></i>
+                Upload JSON File with Email IDs *
+            </label>
+            <div class="upload-area" id="jsonUploadArea">
+                <div class="upload-content">
+                    <i class="fas fa-upload"></i>
+                    <p><span class="font-semibold">Click to upload</span> JSON file</p>
+                    <p class="text-xs">JSON files only</p>
+                </div>
+                <input type="file" id="jsonFileInput" accept=".json" class="hidden">
+            </div>
+            <p id="jsonFileStatus" class="status-text hidden"></p>
+            <p id="emailCountStatus" class="status-text hidden"></p>
+        </div>
+
+        <!-- Display extracted emails -->
+        <div id="emailListSection" class="form-section hidden">
+            <h3>Extracted Email IDs:</h3>
+            <div id="emailList" class="email-list"></div>
+        </div>
+
+        <!-- Subject Input -->
+        <div class="form-section">
+            <label class="form-label">Email Subject *</label>
+            <input type="text" id="subjectInput" placeholder="Enter email subject" class="form-input">
+        </div>
+
+        <!-- Message Input -->
+        <div class="form-section">
+            <label class="form-label">Email Message / Content *</label>
+            <textarea id="messageInput" placeholder="Enter email message content" class="form-textarea" rows="6"></textarea>
+        </div>
+
+        <!-- General File Attachments Section -->
+        <div class="form-section">
+            <label class="form-label">
+                <i class="fas fa-paperclip"></i>
+                File Attachments (Optional)
+            </label>
+            <p class="description">These files will be attached to all emails sent to recipients</p>
+            
+            <div class="upload-area general-upload" id="generalUploadArea">
+                <div class="upload-content">
+                    <i class="fas fa-paperclip"></i>
+                    <p><span class="font-semibold">Click to upload</span> files</p>
+                    <p class="text-xs">PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, TXT, Images</p>
+                </div>
+                <input type="file" id="generalFilesInput" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.jpg,.jpeg,.png,.gif,.bmp,.svg" class="hidden">
+            </div>
+
+            <!-- Display uploaded general attachments -->
+            <div id="generalAttachmentsList" class="attachments-list hidden"></div>
+        </div>
+
+        <!-- Send Button -->
+        <div class="form-section">
+            <button id="sendEmailsBtn" class="send-button" disabled>
+                <i class="fas fa-paper-plane"></i>
+                Send Emails
+            </button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="results-section hidden">
+            <h3>Sending Results</h3>
+            <div id="resultsList" class="results-list"></div>
+            
+            <div class="results-actions">
+                <button id="resetFormBtn" class="reset-button">Reset Form</button>
+                <div class="results-summary">
+                    <span id="successCount" class="success-text">0 successful</span>
+                    <span id="failureCount" class="failure-text">0 failed</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h4>Instructions:</h4>
+            <ul>
+                <li>1. Upload a JSON file containing email IDs (supports arrays or objects)</li>
+                <li>2. Fill in the email subject and message content</li>
+                <li>3. Optionally upload files that will be attached to all emails</li>
+                <li>4. Click "Send" to begin the bulk email process</li>
+            </ul>
+            <div class="json-examples">
+                <p><strong>JSON Format Examples:</strong></p>
+                <code>["email1@example.com", "email2@example.com"]</code>
+                <code>{"emails": ["email1@example.com", "email2@example.com"]}</code>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
